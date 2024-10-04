@@ -1,0 +1,103 @@
+import java.text.SimpleDateFormat;  
+import java.util.Date; 
+
+class HelloWorld {
+    public static void main(String[] args) {
+        /*
+        //zad1
+        String myName = "Adam Salej";
+        System.out.println(myName);
+        
+        //zad2
+        System.out.println(myName.length());
+        
+        //zad3
+        String s1 = "Ala", s2 = "ma", s3="kota";
+        String s4 = s1+" "+s2+" "+s3;
+        System.out.println(s4);
+        
+        //zad4
+        System.out.println("                   *");
+        System.out.println("                   * *");
+        System.out.println("                   * * *");
+        System.out.println("* * * * * * * * * * * * * *");
+        System.out.println("* * * * * * * * * * * * * * *");
+        System.out.println("* * * * * * * * * * * * * *");
+        System.out.println("                   * * *");
+        System.out.println("                   * *");
+        System.out.println("                   *");
+        
+        //zad5
+        System.out.println("     *     ");
+        System.out.println("    * *    ");
+        System.out.println("   * * *   ");
+        System.out.println("  * * * *  ");
+        System.out.println(" * * * * * ");
+        System.out.println("* * * * * *");
+        System.out.println(" * * * * * ");
+        System.out.println("  * * * *  ");
+        System.out.println("   * * *   ");
+        System.out.println("    * *    ");
+        System.out.println("     *     ");
+        
+        //zad6
+        String zdanie = "Ala ma kota";
+        System.out.println(zdanie.replace('a','e'));
+        
+        //zad7
+        int ch1 = 'A', ch2='!', ch3='@', ch4='>', ch5='~', ch6='\n', ch7='\b';
+        System.out.println(ch1);
+        System.out.println(ch2);
+        System.out.println(ch3);
+        System.out.println(ch4);
+        System.out.println(ch5);
+        System.out.println(ch6);
+        System.out.println(ch7);
+        
+        //zad8
+        int A = 'A', z = 'z';
+        int zero = '0', dziewiec ='9';
+        System.out.println("Przedzial ASCII liter: "+A+"-"+z);
+        System.out.println("Przedzial ASCII cyfr: "+zero+"-"+dziewiec);
+        
+        
+        //zad9
+        String mojeZdanie = "Grzesiek nie wiedzial dlaczego ... jest tak drapieznym ... mimo, ze jego ... na to nie wskazuje";
+        String s1 = "Mariusz Pudzian", s2="kulturysta", s3="niepozorna osobowosc";
+        mojeZdanie = mojeZdanie.replaceFirst("\\.\\.\\.",s1);
+        mojeZdanie = mojeZdanie.replaceFirst("\\.\\.\\.",s2);
+        mojeZdanie = mojeZdanie.replaceFirst("\\.\\.\\.",s3);
+        System.out.println(mojeZdanie);
+        
+        //zad10
+        String mojeZdanie2 = "... to najlepsza ksiazka napisana przez ...";
+        String s4 = "Misery", s5 = "Stephena Kinga";
+        mojeZdanie2 = mojeZdanie2.replaceFirst("\\.\\.\\.",s4);
+        mojeZdanie2 = mojeZdanie2.replaceFirst("\\.\\.\\.",s5);
+        System.out.println(mojeZdanie2);
+        
+        
+        
+       
+        //zad11
+        String wodrze = "wodrze";
+        for(int i=1;i<=5;i++){
+            System.out.print(wodrze+" ");
+        }
+        
+        //zad12
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+        Date date = new Date();  
+        System.out.println(formatter.format(date)); 
+
+        //zad13
+        char z1 = 54, z2 = 103, z3 = 241, z4=67, z5=9999, z6=9;
+        System.out.println(z1);
+        System.out.println(z2);
+        System.out.println(z3);
+        System.out.println(z4);
+        System.out.println(z5);
+        System.out.println(z6);
+        */
+    }
+}
