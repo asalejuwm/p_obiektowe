@@ -1,0 +1,18 @@
+import java.text.SimpleDateFormat;  
+import java.util.Date; 
+
+class HelloWorld {
+    public static void main(String[] args) {
+        //zad1
+        System.out.println(23.0+76);
+        System.out.println(41*2.0+3);
+        System.out.println(5-33);
+        System.out.println(109%3);
+        System.out.println(50/2);
+        System.out.println(4|2);
+        System.out.println(3^5);
+        System.out.println(7&9);
+        
+    
+    }
+}
