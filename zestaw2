@@ -1,18 +1,93 @@
 import java.text.SimpleDateFormat;  
 import java.util.Date; 
+import java.util.*;
+import java.lang.Math;
+import java.util.Scanner;
+import java.math.BigInteger;
 
 class HelloWorld {
     public static void main(String[] args) {
+        Scanner myObj = new Scanner(System.in);  
+        /*
         //zad1
-        System.out.println(23.0+76);
-        System.out.println(41*2.0+3);
-        System.out.println(5-33);
-        System.out.println(109%3);
-        System.out.println(50/2);
-        System.out.println(4|2);
-        System.out.println(3^5);
-        System.out.println(7&9);
+        Number liczba = 23.0+76;
+        System.out.println(liczba.getClass());
+        liczba = 41*2.0+3;
+        System.out.println(liczba.getClass());
+        liczba = 5-33;
+        System.out.println(liczba.getClass());
+        liczba = 109%3;
+        System.out.println(liczba.getClass());
+        liczba = 50/2;
+        System.out.println(liczba.getClass());
+        liczba = 4|2;
+        System.out.println(liczba.getClass());
+        liczba = 3^5;
+        System.out.println(liczba.getClass());
+        liczba = 7&9;
+        System.out.println(liczba.getClass());
         
-    
-    }
-}
+        //zad2
+        double liczba1 = (Math.sqrt(7)+1)/2+Math.pow(3,3)%2;
+        int res = (int) liczba1;
+        System.out.println(res);
+        double liczba2 = 2002.0/9*9;
+        res = (int) liczba2;
+        System.out.println(res);
+        double liczba3 = (3+Math.sqrt(3)/((Math.sqrt(5)/2)/3))+1;
+        res = (int) liczba3;
+        System.out.println(res);
+        int a=126, b=11, c=3;
+        double liczba4 = a%b%c;
+        res = (int) liczba4;
+        System.out.println(res);
+        double liczba5 = (salej%adam+1)/Math.pow(2,1.0/4.0);
+        res = (int) liczba5;
+        System.out.println(res);
+        
+        
+        //zad3
+        String slowo1 = myObj.nextLine();  
+        String slowo2 = myObj.nextLine();
+        System.out.println(slowo1 +" "+ slowo2);
+
+        
+        //zad4
+        int liczba6 = myObj.nextInt();
+        int liczba7 = myObj.nextInt();
+        int suma = liczba6 + liczba7;
+        int roznica = liczba6 - liczba7;
+        int iloczyn = liczba6 * liczba7;
+        double iloraz = (double) liczba6 / liczba7;
+
+        System.out.println("Suma: " + suma);
+        System.out.println("Roznica: " + roznica);
+        System.out.println("Iloczyn: " + iloczyn);
+        System.out.println("Iloraz: " + iloraz);
+        
+        //zad5
+        int liczba8 = myObj.nextInt();
+        int res1 = liczba8+140, res2=liczba8-31, res3=liczba8*7,res5=liczba8%7;
+        double res4=(double)liczba8/13,res6 = (double) liczba8/4;
+        BigInteger liczba8_big = BigInteger.valueOf(10);
+        BigInteger res7 = liczba8_big.pow(45);
+        int res8 = liczba8|67;
+        int res9 = liczba8&59;
+        int res10= liczba8^23;
+        int res11 = liczba8<<5;
+        int res12 = liczba8>>6;
+        
+        System.out.println("Liczba: " + liczba8);
+        System.out.println(liczba8+"+140: " + res1);
+        System.out.println(liczba8+"-31: " + res2);
+        System.out.println(liczba8+"*7: " + res3);
+        System.out.println(liczba8+"/13: " + res4);
+        System.out.println(liczba8+"%7: " + res5);
+        System.out.println("Dzielenie calkowite przez 4: " + (int)Math.floor(res6));
+        System.out.println(liczba8+"do potegi 45: " + res7);
+        System.out.println(liczba8+"|67 : " + res8);
+        System.out.println(liczba8+"&59: " + res9);
+        System.out.println(liczba8+"^23: " + res10);
+        System.out.println(liczba8+"<<5: " + res11);
+        System.out.println(liczba8+">>6: " + res12);
+        */
