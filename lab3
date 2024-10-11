@@ -1,0 +1,178 @@
+import java.lang.Math;
+
+class Main {
+    //zad1
+    static void trojkiPitagorejskie(int n){
+        int a,b,c;
+        for(a=1;a<=n;a++){
+            for(b=1;b<=n;b++){
+                for(c=1;c<=n;c++){
+                    if(a*a+b*b==c*c){
+                        System.out.println(a+" "+b+" "+c);
+                    }
+                }
+            }
+        }
+    }
+
+    //zad2
+    static void funKwaRozwiazania(int n){
+        int a,b,c;
+        for(a=1;a<=n;a++){
+            for(b=1;b<=n;b++){
+                for(c=1;c<=n;c++){
+                    if(b*b-4*a*c>=0){
+                        System.out.println(a+" "+b+" "+c);
+                    }
+                }
+            }
+        }
+    }
+
+    //zad3
+    static void funKwaDelta(int n){
+        int a,b,c,delta;
+        double pierwiastek,pom;
+        for(a=1;a<=n;a++){
+            for(b=1;b<=n;b++){
+                for(c=1;c<=n;c++){
+                    delta = b*b-4*a*c;
+                    if(delta>=0){
+                        pierwiastek = Math.sqrt(delta);
+                        if(pierwiastek%1==0){
+                            pom = Math.sqrt(pierwiastek);
+                            if(pom%1==0){
+                                System.out.println(a+" "+b+" "+c);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //zad4
+    static void liczbyPierwsze(int n){
+        int i,j,k;
+        boolean czy_pierwsza;
+        for(i=2;i<=n;i++){
+            czy_pierwsza=true;
+            for(j=2;j<=i;j++){
+                for(k=2;k<=i;k++){
+                    if(j*k==i){
+                        czy_pierwsza=false;
+                        break;
+                    }
+                }
+            }
+            if(czy_pierwsza){
+                System.out.println(i);
+            }
+        }
+    }
+
+    //zad5
+    static void liczbyPodzielne(int m, int n){
+        double start,koniec,i;
+        start = Math.pow(10,m-1);
+        koniec = Math.pow(10,m);
+        for(i=start;i<koniec;i++){
+            if(i%n==0){
+                System.out.println((int)i);
+            }
+        }
+    }
+
+    //zad6
+    //cos nie dziala
+    static void piramida(int n, int variant){
+        int i,j,k;
+        System.out.println("wariant: "+variant);
+        if(variant==1);
+        {
+            for (i = 1; i <= n; i++) {
+                for (j = 1; j <= i; j++) {
+                    System.out.print("* ");
+                }
+                System.out.println();
+            }
+        }
+        if(variant==2){
+            for (i = 1; i <= n; i++) {
+                for (j=n-i; j>=1; j--)
+                {
+
+                    System.out.print(" ");
+                }
+
+                for (k=1; k<=i; k++ )
+                {
+
+                    System.out.print("* ");
+                }
+                System.out.println();
+            }
+        }
+    }
+    //zad7
+    static int silnia(int n){
+        int i,wynik=1;
+        for(i=n;i>0;i--){
+            wynik*=i;
+        }
+        return wynik;
+    }
+
+    //zad8
+    static int silniaPodwojna(int n){
+        int i,wynik=1;
+        for(i=n;i>0;i=i-2){
+            wynik*=i;
+        }
+        return wynik;
+    }
+
+    //zad9
+    static int silnia_m(int m,int n){
+        int i,wynik=1;
+        for(i=n;i>0;i=i-m){
+            wynik*=i;
+        }
+        return wynik;
+    }
+
+    //zad10
+    static int dwumianNewtona(int n, int k){
+        int wynik;
+        wynik = silnia(n)/(silnia(k)*silnia(n-k));
+        return wynik;
+    }
+
+    //zad11
+    static void ciagFibonacciego(int n){
+        int a=0,b=1,pom,i;
+        for(i=1;i<=n;i++){
+            System.out.print(b+" ");
+            pom = a+b;
+            a = b;
+            b = pom;
+        }
+    }
+
+    //zad12
+    public static void main(String[] args) {
+
+        //trojkiPitagorejskie(50);
+        //funKwaRozwiazania(5);
+        //funKwaDelta(30);
+        //liczbyPierwsze(30);
+        //liczbyPodzielne(3,21);
+        //piramida(6,2);
+        //System.out.println(silnia(5));
+        //System.out.println(silniaPodwojna(5));
+        //System.out.println(silnia_m(4,9));
+        //System.out.println(dwumianNewtona(10,3));
+        ciagFibonacciego(10);
+    }
+
+}
