@@ -1,0 +1,175 @@
+import java.util.LinkedList;
+import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
+
+
+
+public class Main {
+
+    //zad1
+    public static LinkedList generujTablice(int n, int minWartosc, int maxWartosc) {
+        LinkedList list = new LinkedList();
+        Random rand = new Random();
+
+        for (int i = 0; i < n; i++) {
+            list.add(rand.nextInt(minWartosc, maxWartosc + 1));
+        }
+
+        return list;
+    }
+
+    /*
+    //zad2
+    public static void wypiszTablice(LinkedList tab, int n, int m){
+        int size = tab.size();
+        if(n*m)>size{
+            System.out.print({ );
+            for(int i=0;i<m;i++){
+                for(int j=;j<n;j++){
+                    System.out.print()
+                }
+            }
+        }
+    }
+
+ */
+
+    //zad3
+    public static int ileNieparzystych(LinkedList tab) {
+        int size = tab.size();
+        int wynik = 0;
+        for (int i = 0; i < size; i++) {
+
+            if((int)tab.get(i)%2!=0) {
+                wynik++;
+            }
+        }
+        return wynik;
+    }
+
+    public static int ileParzystych(LinkedList tab) {
+        int size = tab.size();
+        int wynik = 0;
+        for (int i = 0; i < size; i++) {
+
+            if((int)tab.get(i)%2==0) {
+                wynik++;
+            }
+        }
+        return wynik;
+    }
+
+    public static int ileDodatnich(LinkedList tab) {
+        int size = tab.size();
+        int wynik = 0;
+        for (int i = 0; i < size; i++) {
+
+            if((int)tab.get(i)>0) {
+                wynik++;
+            }
+        }
+        return wynik;
+    }
+
+    public static int ileUjemnych(LinkedList tab) {
+        int size = tab.size();
+        int wynik = 0;
+        for (int i = 0; i < size; i++) {
+
+            if((int)tab.get(i)<0) {
+                wynik++;
+            }
+        }
+        return wynik;
+    }
+
+    public static int ileZerowych(LinkedList tab) {
+        int size = tab.size();
+        int wynik = 0;
+        for (int i = 0; i < size; i++) {
+
+            if((int)tab.get(i)==0) {
+                wynik++;
+            }
+        }
+        return wynik;
+    }
+
+    public static int ileMaksymalnych(LinkedList tab) {
+        int size = tab.size();
+        int wynik = 0;
+        int max = (int)list.get(0);
+
+        for (int i = 0; i < size; i++) {
+
+            if((int)tab.get(i)>max) {
+                max = (int)tab.get(i);
+            }
+        }
+
+        for(int i=0;i<size;i++){
+            if((int)tab.get(i)==max){
+                wynik++;
+            }
+        }
+        return wynik;
+    }
+
+    public static int ileMinimalnych(LinkedList tab) {
+        int size = tab.size();
+        int wynik = 0;
+        int min = (int)list.get(0);
+
+        for (int i = 0; i < size; i++) {
+
+            if((int)tab.get(i)<min) {
+                min = (int)tab.get(i);
+            }
+        }
+
+        for(int i=0;i<size;i++){
+            if((int)tab.get(i)==min){
+                wynik++;
+            }
+        }
+        return wynik;
+    }
+
+    public static int ileUnikalnych(LinkedList tab){
+        LinkedList unikalne = new LinkedList();
+        int size = tab.size();
+        int wynik = 0;
+        for (int i = 0; i < size; i++) {
+            //if (int)tab.get(i) in unikalne) {
+                unikalne.add((int)tab.get(i));
+                wynik++;
+            }
+        }
+        return wynik;
+    }
+
+    //zad7
+    public static LinkedList generujZakres(int n, double minWartosc, double maxWartosc) {
+        LinkedList list = new LinkedList();
+        Random rand = new Random();
+        double roznica = (double) (maxWartosc - minWartosc) / (n - 1);
+        double i = minWartosc;
+        for (int j = 0; j < n; j++) {
+            list.add(i);
+            i += roznica;
+        }
+        return list;
+    }
+
+
+    public static void main(String[] args) {
+
+        LinkedList lista = generujTablice(9, -50, 50);
+        System.out.println(lista);
+        System.out.println(ileMinimalnych(lista));
+
+
+    }
+}
