@@ -1,0 +1,172 @@
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.HashSet;
+
+
+public class Main {
+
+    //zad1
+    public static ArrayList<Integer> append(ArrayList<Integer> tab1, ArrayList<Integer> tab2){
+        int i,j;
+        ArrayList<Integer> res = new ArrayList<Integer>();
+
+        for(i=0;i<tab1.size();i++){
+            j = tab1.get(i);
+            res.add(j);
+        }
+        for(i=0;i<tab2.size();i++){
+            j = tab2.get(i);
+            res.add(j);
+        }
+        return res;
+    }
+
+    //zad2
+    public static ArrayList<Integer> merge(ArrayList<Integer> tab1, ArrayList<Integer> tab2){
+        int i,j;
+        ArrayList<Integer> res = new ArrayList<Integer>();
+
+        for(i=0;i<tab1.size();i++){
+            j = tab1.get(i);
+            res.add(j);
+            j = tab2.get(i);
+            res.add(j);
+        }
+
+        while(i<tab1.size()){
+            res.add(tab1.get(i));
+            i++;
+        }
+        while(i<tab2.size()){
+            res.add(tab2.get(i));
+            i++;
+        }
+        return res;
+    }
+
+    //zad3
+    public static ArrayList<Integer> mergeSorted(ArrayList<Integer> tab1, ArrayList<Integer> tab2){
+        int i,j;
+        ArrayList<Integer> res = new ArrayList<Integer>();
+
+        for(i=0;i<tab1.size();i++){
+            j = tab1.get(i);
+            res.add(j);
+        }
+        for(i=0;i<tab2.size();i++){
+            j = tab2.get(i);
+            res.add(j);
+        }
+        res.sort(null);
+        return res;
+    }
+
+    //zad4
+    public static ArrayList<String> stringToArray(String napis){
+        ArrayList<String> res = new ArrayList<String>();
+        for(int i=0;i<napis.length();i++){
+            res.add(String.valueOf(napis.charAt(i)));
+        }
+        return res;
+    }
+
+    public static ArrayList<Integer> intToArray(int liczba){
+        ArrayList<Integer> res = new ArrayList<Integer>();
+        String liczbaStr = String.valueOf(liczba);
+        for(int i=0;i<liczbaStr.length();i++){
+            int cyfra = Character.getNumericValue(liczbaStr.charAt(i));
+            res.add(cyfra);
+        }
+        return res;
+    }
+
+    //zad5
+    public static boolean checkChar(ArrayList<String> tab, char znak){
+        String charToString = String.valueOf(znak);
+        return tab.contains(charToString);
+    }
+
+    public static boolean checkInt(ArrayList<String> tab, int liczba){
+        String intToString = String.valueOf(liczba);
+        return tab.contains(intToString);
+    }
+
+    //zad6
+    public static int countChar(ArrayList<String> tab, char znak){
+        int licznik = 0;
+        String charToString = String.valueOf(znak);
+        for(int i=0;i<tab.size();i++){
+            if(tab.get(i).equals(charToString)){
+                licznik++;
+            }
+        }
+        return licznik;
+    }
+
+    public static int countInt(ArrayList<String> tab, int liczba){
+        int licznik = 0;
+        String intToString = String.valueOf(liczba);
+        for(int i=0;i<tab.size();i++){
+            if(tab.get(i).equals(intToString)){
+                licznik++;
+            }
+        }
+        return licznik;
+    }
+
+    //zad7
+    public static ArrayList<ArrayList<Integer>> uniqueIntList(ArrayList<Integer> tab){
+        HashSet<Integer> unique = new HashSet<>(tab);
+        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+
+        for(int wartosc:unique){
+            ArrayList<Integer> para = new ArrayList<>();
+            para.add(wartosc);
+            para.add(0);
+            res.add(para);
+        }
+        return res;
+    }
+
+
+    public static void main(String[] args) {
+        ArrayList<Integer> lista1 = new ArrayList<Integer>();
+        lista1.add(9);
+        lista1.add(1);
+        lista1.add(2);
+        lista1.add(3);
+
+        ArrayList<Integer> lista2 = new ArrayList<Integer>();
+        lista2.add(10);
+        lista2.add(4);
+        lista2.add(5);
+        lista2.add(6);
+        lista2.add(7);
+        lista2.add(8);
+
+
+        String slowo = "Kasztelan";
+        int liczba = 532165562;
+
+        ArrayList<String> lista3 = stringToArray(slowo);
+        ArrayList<Integer> lista4 = intToArray(liczba);
+
+        System.out.println(lista1);
+        System.out.println(lista2);
+        System.out.println(slowo);
+        System.out.println(liczba);
+
+
+        //System.out.println(append(lista1,lista2));
+        //System.out.println(merge(lista1,lista2));
+        //System.out.println(mergeSorted(lista1,lista2));
+        //System.out.println(lista3);
+        //System.out.println(lista4);
+        //System.out.println(checkChar(lista3,'a'));
+        //System.out.println(checkInt(lista4,8));
+        //System.out.println(countChar(lista3,'a'));
+        //System.out.println(countInt(lista4,5));
+
+
+    }
+}
