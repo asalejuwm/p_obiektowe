@@ -86,9 +86,8 @@ public class Main {
         return tab.contains(charToString);
     }
 
-    public static boolean checkInt(ArrayList<String> tab, int liczba){
-        String intToString = String.valueOf(liczba);
-        return tab.contains(intToString);
+    public static boolean checkInt(ArrayList<Integer> tab, int liczba){
+        return tab.contains(liczba);
     }
 
     //zad6
@@ -103,11 +102,10 @@ public class Main {
         return licznik;
     }
 
-    public static int countInt(ArrayList<String> tab, int liczba){
+    public static int countInt(ArrayList<Integer> tab, int liczba){
         int licznik = 0;
-        String intToString = String.valueOf(liczba);
         for(int i=0;i<tab.size();i++){
-            if(tab.get(i).equals(intToString)){
+            if(tab.get(i).equals(liczba)){
                 licznik++;
             }
         }
@@ -123,6 +121,26 @@ public class Main {
             ArrayList<Integer> para = new ArrayList<>();
             para.add(wartosc);
             para.add(0);
+            res.add(para);
+        }
+        return res;
+    }
+
+    //zad8
+    public static ArrayList<ArrayList<Integer>> uniqueIntCount(ArrayList<Integer> tab){
+        HashSet<Integer> unique = new HashSet<>(tab);
+        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+
+        for(int wartosc1:unique){
+            ArrayList<Integer> para = new ArrayList<>();
+            int licznik = 0;
+            para.add(wartosc1);
+            for(int wartosc2:tab){
+                if(wartosc1==wartosc2){
+                    licznik++;
+                }
+            }
+            para.add(licznik);
             res.add(para);
         }
         return res;
@@ -166,7 +184,8 @@ public class Main {
         //System.out.println(checkInt(lista4,8));
         //System.out.println(countChar(lista3,'a'));
         //System.out.println(countInt(lista4,5));
-
+        //System.out.println(uniqueIntList(lista4));
+        //System.out.println(uniqueIntCount(lista4));
 
     }
 }
