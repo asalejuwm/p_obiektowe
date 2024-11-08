@@ -1,0 +1,114 @@
+public class Main {
+
+    //zad2
+    public static boolean ciagArytmetyczny(int[] tab){
+        boolean res = true;
+        int r = tab[1] - tab[0];
+
+        for(int i=1;i<tab.length;i++){
+            if(tab[i]-tab[i-1]!=r){
+                res = false;
+                break;
+            }
+        }
+        return res;
+    }
+
+    //zad4
+    public static int podciag(int[] tab){
+        int obecnaDlugosc = 0, maxDlugosc = 0;
+        for(int i=1;i<tab.length;i++){
+            if(tab[i]>tab[i-1]){
+                obecnaDlugosc++;
+                if(obecnaDlugosc>maxDlugosc){
+                    maxDlugosc = obecnaDlugosc;
+                }
+
+            }
+            else{
+                obecnaDlugosc=0;
+            }
+        }
+        return maxDlugosc+1;
+    }
+
+    //zad5
+    public static int podciag_r(int[] tab, int r){
+        int obecnaDlugosc = 0, maxDlugosc = 0;
+        for(int i=1;i<tab.length;i++){
+            if(tab[i]-tab[i-1]==r){
+                obecnaDlugosc++;
+                if(obecnaDlugosc>maxDlugosc){
+                    maxDlugosc = obecnaDlugosc;
+                }
+
+            }
+            else{
+                obecnaDlugosc=0;
+            }
+        }
+        return maxDlugosc+1;
+    }
+
+    //zad6
+    public static void sekwencjaCollatza(int n, int c) {
+        int i, wynik;
+        for (i = c; i < c + n; i++) {
+            if (i % 2 == 0) {
+                wynik = i / 2;
+                System.out.print(wynik + "\t");
+            } else if (i % 2 == 1) {
+                wynik = i * 3 + 1;
+                System.out.print(wynik + "\t");
+            }
+        }
+        System.out.println();
+    }
+
+    //zad7
+    public static void minMaxSekwencjaCollatza(int n,int c) {
+        int i, wynik, min, max;
+        if(c%2==0){
+            min = c/2;
+            max = c/2;
+        }
+        else {
+            min = c*3+1;
+            max = c*3+1;
+        }
+
+        for (i = c; i < c + n; i++) {
+            if (i % 2 == 0) {
+                wynik = i / 2;
+                if (wynik < min) {
+                    min = wynik;
+                }
+                if (wynik > max) {
+                    max = wynik;
+                }
+            } else if (i % 2 == 1) {
+                wynik = i * 3 + 1;
+                if (wynik < min) {
+                    min = wynik;
+                }
+                if (wynik > max) {
+                    max = wynik;
+                }
+            }
+        }
+        System.out.println("min = " + min);
+        System.out.println("max = " + max);
+    }
+
+        public static void main(String[] args) {
+        //sekwencjaCollatza(3, 2);
+        //minMaxSekwencjaCollatza(3,2);
+        //int[] tab1 = {7,0,3,6,8,10,12,1};
+        //System.out.println(podciag(tab1));
+        //System.out.println(podciag_r(tab1, 2));
+        //int[] tab2 = {1,5,9,13};
+        //System.out.println(ciagArytmetyczny(tab2));
+        //int[] wartosci = {3,5,6};
+        }
+}
+
