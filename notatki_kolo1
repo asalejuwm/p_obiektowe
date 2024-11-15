@@ -1,0 +1,72 @@
+public class Main {
+    public static int[] ciag_arytmetyczny(int n, int m, int a1, int[] r){
+        int[] wynik = new int[n];
+        wynik[0] = a1;
+        for(int i = 1; i<n; i++){
+            int suma=a1;
+            for(int j = 0; j<m; j++){
+                suma+=Math.pow(i,j+1)*r[j];
+            }
+            wynik[i] = suma;
+        }
+        return wynik;
+    }
+    public static boolean zad2(int[] tab){
+        int roznica = tab[1]-tab[0];
+        for(int i=0; i<tab.length-1; i++){
+            if(tab[i+1]-tab[i]!=roznica){
+                return false;
+            }
+        }
+        return true;
+    }
+    public static boolean zad3(int[] tab,int m){
+        for(int i=0;i<tab.length;i++){
+            for(int j = 0; i<tab.length-1-i;j++){
+                tab[j]=tab[j+1]-tab[j];
+            }
+        }
+        int[] wynik = new int[tab.length-(m-1)];
+        if(zad2(wynik)==false){
+            return false;
+        }
+        return true;
+    }
+
+    public static int zad4(int[] tab){
+        int obecnaDlugosc = 0;
+        int maxDlugosc = 0;
+        for(int i = 0; i<tab.length-1; i++){
+
+            if(tab[i+1]>tab[i]){
+                obecnaDlugosc++;
+            }else{
+                if(obecnaDlugosc>maxDlugosc){
+                    maxDlugosc = obecnaDlugosc;
+                }
+                obecnaDlugosc=0;
+            }
+        }
+        return maxDlugosc;
+    }
+
+
+    public static void main(String[] args) {
+
+        int[] tab = ciag_arytmetyczny(10,3,3,new int[]{1,1,1});
+        /*
+        for(int i=0;i<tab.length;i++){
+            System.out.println(tab[i]);
+        }
+
+        int[] tab1 = {1,3,5,7,9,13};
+        System.out.println(zad2(tab1));
+
+        System.out.println(zad3(tab,3));
+
+         */
+
+        System.out.println(zad4(new int[]{6,2,3,1,3,5,6,2}));
+
+    }
+}
