@@ -3,6 +3,12 @@ public class Produkt {
     public double cena;
     public int iloscNaMagazynie;
 
+    public Produkt(){
+        this.nazwa="";
+        this.cena = 0;
+        this.iloscNaMagazynie = 0;
+    }
+
     public Produkt(String nazwa, double cena, int iloscNaMagazynie) {
         this.nazwa = nazwa;
         this.cena = cena;
@@ -27,4 +33,3 @@ public class Produkt {
         return nazwa;
     }
 }
-
