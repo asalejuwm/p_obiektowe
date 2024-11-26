@@ -1,35 +1,44 @@
-public class Produkt {
-    String nazwa;
-    public double cena;
-    public int iloscNaMagazynie;
+import java.util.ArrayList;
+public class KoszykZakupowy {
+    public ArrayList<Produkt> produkty;
+    public ArrayList<Integer> ilosci;
 
-    public Produkt(){
-        this.nazwa="";
-        this.cena = 0;
-        this.iloscNaMagazynie = 0;
+    public KoszykZakupowy() {
+        produkty = new ArrayList<>();
+        ilosci = new ArrayList<>();
+    }
+    public KoszykZakupowy(ArrayList<Produkt> poczatkoweProdukty){
+        this.produkty = new ArrayList<>(poczatkoweProdukty);
     }
 
-    public Produkt(String nazwa, double cena, int iloscNaMagazynie) {
-        this.nazwa = nazwa;
-        this.cena = cena;
-        this.iloscNaMagazynie = iloscNaMagazynie;
+    public void wyswietlProdukty() {
+        if (produkty.isEmpty()) {
+            System.out.println("Koszyk jest pusty");
+        } else {
+            System.out.println("Zawartosc koszyka: ");
+            for (Produkt p : produkty) {
+                System.out.println(p.getNazwa());
+                System.out.println("Ilosc w koszyku: "+ilosci.get(produkty.indexOf(p)));
+            }
+        }
     }
-    public void wyswietlInformacje(){
-        System.out.print("Nazwa: " + nazwa+", ");
-        System.out.print("Cena: " + cena+", ");
-        System.out.print("Ilosc na magazynie: " + iloscNaMagazynie+", ");
-    }
-    public void dodajDoMagazynu(int ilosc){
-        iloscNaMagazynie+=ilosc;
-    }
-    public void usunZMagazynu(int ilosc){
-        if(iloscNaMagazynie>=ilosc){
-            iloscNaMagazynie-=ilosc;
-        }else{
+
+    public void dodajProdukt(Produkt p, int ilosc){
+        if(p.iloscNaMagazynie>=ilosc) {
+            produkty.add(p);
+            ilosci.add(ilosc);
+            p.iloscNaMagazynie-=ilosc;
+        }
+        else{
             System.out.println("Podana wartosc przekracza ilosc na magazynie");
         }
     }
-    public String getNazwa(){
-        return nazwa;
+    public double obliczCalkowitaWartosc(){
+        double res = 0;
+        for (int i=0;i<produkty.size();i++){
+            res+=produkty.get(i).cena*ilosci.get(i);
+        }
+        return res;
     }
+
 }
