@@ -12,8 +12,8 @@ public class Main {
      */
         Produkt p2 = new Produkt("Woda niegazowana",1.99,1000);
         //p2.wyswietlInformacje();
-        sklep.dodajProdukt(p1);
-        sklep.dodajProdukt(p2);
+        sklep.dodaj(p1);
+        sklep.dodaj(p2);
         KoszykZakupowy koszyk1 = new KoszykZakupowy();
         KoszykZakupowy koszyk2 = new KoszykZakupowy();
         //k1.wyswietlProdukty();
@@ -29,7 +29,7 @@ public class Main {
         //z.wyswietlZamowienie();
         //z.ustawStatusZamowienia();
         //z.wyswietlZamowienie();
-        Klient klient1 = new Klient("Mariusz","Pudzian");
+        Klient klient1 = new Klient("Mariusz","Pudzian",new Adres());
         klient1.dodajZamowienie(z1);
         klient1.dodajZamowienie(z2);
         //klient1.wyswietlHistorieZamowien();
@@ -44,7 +44,6 @@ public class Main {
 
         sklep.zakupy(p1,2,z2);
         sklep.zakupy(p2,3,z2); //funkcja nie doda p2, bo ten produkt jest juz w zamowieniu
-        z2.wyswietlZamowienie();
         /*
         z2.platnosc = platnosc1;
         System.out.println(platnosc1.statusPlatnosci);
@@ -61,13 +60,21 @@ public class Main {
         //magazyn.wyswietlAsortyment();
 
         Adres adres1 = new Adres("Pudziana",5,8,"Tychy","99-999");
-        adres1.pokaz();
-
-        System.out.println("12-345".compareTo("12-344"));
-
-        //throw new illegalargumentexception
-        //@Override
-        //to string
+        Adres adres2 = new Adres("Kopernika", 16, "Radom", "12-345");
+        //adres1.pokaz();
+        //System.out.println(adres2.przed(adres1));
+        System.out.println(koszyk1);
+        sklep.powitanie();
+        Jablko jonagold = new Jablko("Jonagold", 0.99, 100);
+        Spodnie dresy = new Spodnie("Dresy",49.99,10);
+        jonagold.zjedz();
+        dresy.zaloz();
+        KoszykZakupowy koszyk3 = new KoszykZakupowy();
+        koszyk3.dodajProdukt(jonagold,5);
+        koszyk3.dodajProdukt(dresy,1);
+        //koszyk3.wyswietlProdukty();
+        //System.out.println(koszyk3.obliczCalkowitaWartosc());
+        //System.out.println(jonagold.getCena());
 
     }
 }

@@ -1,7 +1,7 @@
-public class Produkt {
-    String nazwa;
-    public double cena;
-    public int iloscNaMagazynie;
+public class Produkt implements produktInterface {
+    private String nazwa;
+    private double cena;
+    private int iloscNaMagazynie;
 
     public Produkt(){
         this.nazwa="";
@@ -14,11 +14,47 @@ public class Produkt {
         this.cena = cena;
         this.iloscNaMagazynie = iloscNaMagazynie;
     }
-    public void wyswietlInformacje(){
-        System.out.print("Nazwa: " + nazwa+", ");
-        System.out.print("Cena: " + cena+", ");
-        System.out.print("Ilosc na magazynie: " + iloscNaMagazynie+", ");
+    //gettery
+    public String getNazwa(){
+        return this.nazwa;
     }
+    public double getCena(){
+        return this.cena;
+    }
+    public int getIloscNaMagazynie(){
+        return this.iloscNaMagazynie;
+    }
+    //settery
+    public void setNazwa(String nazwa){
+        if(nazwa==null){throw new IllegalArgumentException("Nie wolno");}
+        this.nazwa=nazwa;
+    }
+    public void setCena(double cena){
+        if(cena<=0){throw new IllegalArgumentException("Nie wolno");}
+        this.cena=cena;
+    }
+    public void setIloscNaMagazynie(int iloscNaMagazynie){
+        if(iloscNaMagazynie<0){throw new IllegalArgumentException("Nie wolno");}
+        this.iloscNaMagazynie=iloscNaMagazynie;
+    }
+
+    @Override
+    public String toString(){
+        return "nazwa+'"+nazwa+"', cena='"+cena+"', ilosc na magazynie='"+iloscNaMagazynie+"'";
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Produkt other = (Produkt) obj;
+        return (nazwa != null ? nazwa.equals(other.nazwa) : other.nazwa == null)
+                && Double.compare(cena, other.cena) == 0;
+    }
+
     public void dodajDoMagazynu(int ilosc){
         iloscNaMagazynie+=ilosc;
     }
@@ -28,8 +64,5 @@ public class Produkt {
         }else{
             System.out.println("Podana wartosc przekracza ilosc na magazynie");
         }
-    }
-    public String getNazwa(){
-        return nazwa;
     }
 }
