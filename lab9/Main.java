@@ -19,5 +19,14 @@ public class Main {
         FantasyBook book5 = new FantasyBook("tytul","autor","gatunek");
         System.out.println(book5.toString());
 
+        Engine engine1 = new Engine(100,"type",69);
+        CarC carc1 = new CarC(engine1);
+        carc1.setMake("Toyota");
+        carc1.setModel("Century");
+        System.out.println(engine1.toString());
+        System.out.println(carc1.toString());
+
+        ImmutableBook IB1 = new ImmutableBook("tytul","autor",500);
+        System.out.println(IB1.toString());
     }
 }
